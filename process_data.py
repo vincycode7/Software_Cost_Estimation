@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-import pandas
+import pandas,numpy
 
 from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.model_selection import train_test_split
@@ -8,6 +8,7 @@ from sklearn.experimental import enable_iterative_imputer
 from sklearn.impute import IterativeImputer
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import StratifiedShuffleSplit,ShuffleSplit
 
 # def txt_to_excel(file='fromweb.txt',save_to="software_ce_data.xlsx"):
 #     lst = []
@@ -51,7 +52,24 @@ from sklearn.preprocessing import StandardScaler
 #     #save new data
 #     out_filename = file_name.split('.')[0]+'1.csv'
 #     data.to_csv(out_filename)
+def Split_Datato_Half(X,y,train_ratio=0.8,Stratified=False):
+    supported = [numpy.ndarray, pandas.core.frame.DataFrame]
+    if type(X) not in supported or type(y) not in supported: 
+        raise ValueError(f'X is {type(X)} and y is {type(y)}, both values are expected to be either numpy array or a pandas dataframe')
+
+    split_data = StratifiedShuffleSplit(n_splits=1, train_size=train_ratio) if Stratified else ShuffleSplit(n_splits=1, train_size=train_ratio)
     
+    #split the data into two halves
+    try:
+        X,y = X.values, y.values
+    except:
+        X,y = X,y
+
+    for train_index, test_index in split_data.split(X, y):
+        X_train, X_test = X[train_index], X[test_index]
+        y_train, y_test = y[train_index], y[test_index]
+    return (X_train,y_train), (X_test, y_test)
+
 class Fill_Empty_Spaces(BaseEstimator, TransformerMixin):
     """
         This is a Class Used to Preprocess the data
