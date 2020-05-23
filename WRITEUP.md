@@ -1,4 +1,4 @@
-[Data Processing Step]
+[Data Processing Step](Step 1)
 
 In This Project, There are mainly 3 important Files to note, the *process_data.py, model.py and train.py*. 
 The first file *process_data.py* is where all the code to process out data will be created, the second *model.py*
@@ -18,3 +18,15 @@ Spliting the Data Into Train and Test Was Fairly Easy, 90percent of the data wen
                                  <-- Feature Scaling With StandardScaler-->
 According to Research machine learning algorithm have been known to do well when their feature are been scaled, could this be a defect? maybe, maybe not. So Scaling is when the range of value for each feature in the dataset are the same, Various methods are used for this But For this Project We Made Use Of Standardizatoin, Which simply means Subtracting the mean of the feature from each data and dividing by the standard deviation of all the features. This method is said to not be affected by outliers in the 
 dataset. So To Scale Our data we made Use of the Sklearn Class StandardScaler. The code to perform this Operation was Created in *train.py (line 13)* and called in *train.py (line 28)*.
+
+
+[Creating Model Architecture](Step 2)
+
+
+[Training Model](Step 3)
+
+
+[Testing Model](Step 4)
+
+
+[Summary](Step 5)
