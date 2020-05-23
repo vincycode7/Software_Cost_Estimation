@@ -6,6 +6,8 @@ from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.model_selection import train_test_split
 from sklearn.experimental import enable_iterative_imputer
 from sklearn.impute import IterativeImputer
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import StandardScaler
 
 # def txt_to_excel(file='fromweb.txt',save_to="software_ce_data.xlsx"):
 #     lst = []
@@ -50,7 +52,7 @@ from sklearn.impute import IterativeImputer
 #     out_filename = file_name.split('.')[0]+'1.csv'
 #     data.to_csv(out_filename)
     
-class csv_to_ext(BaseEstimator, TransformerMixin):
+class Fill_Empty_Spaces(BaseEstimator, TransformerMixin):
     """
         This is a Class Used to Preprocess the data
     """
@@ -80,7 +82,7 @@ class csv_to_ext(BaseEstimator, TransformerMixin):
         return X
     
     
-class round_ofvalues(BaseEstimator, TransformerMixin):
+class Round_Of_Values(BaseEstimator, TransformerMixin):
     """
         This is a Class Used to Preprocess the data
     """
@@ -106,13 +108,9 @@ class round_ofvalues(BaseEstimator, TransformerMixin):
         except Exceptions as exp:
             raise exp
             
-        X[self.feat_to_round] = X[self.feat_to_round].apply(lambda x: round(x,0))
+        X[self.feat_to_round] = X[self.feat_to_round].apply(lambda x: round(x,0)).copy()
         
         #SPlit into feature and y
-        X,y = X[X.columns[:-1]], X[[X.columns[-1]]]
+        X,y = X[X.columns[:-1]].copy(), X[[X.columns[-1]]].copy()
         
         return X,y
-
-
-if __name__ == "__main__":
-  csv_to_excel()  
