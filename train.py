@@ -26,5 +26,3 @@ if __name__ == "__main__":
 
   #transform test set
   X_test = scaler.transform(X=X_test)
-
-  print(X_train.shape, y_train.shape, X_test.shape, y_test.shape)

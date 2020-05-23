@@ -52,7 +52,12 @@ from sklearn.model_selection import StratifiedShuffleSplit,ShuffleSplit
 #     #save new data
 #     out_filename = file_name.split('.')[0]+'1.csv'
 #     data.to_csv(out_filename)
+
 def Split_Datato_Half(X,y,train_ratio=0.8,Stratified=False):
+    """
+        This Function Utilizes the Split Functions in Sklearn 
+        to Split that into Two halves.
+    """
     supported = [numpy.ndarray, pandas.core.frame.DataFrame]
     if type(X) not in supported or type(y) not in supported: 
         raise ValueError(f'X is {type(X)} and y is {type(y)}, both values are expected to be either numpy array or a pandas dataframe')
@@ -72,7 +77,9 @@ def Split_Datato_Half(X,y,train_ratio=0.8,Stratified=False):
 
 class Fill_Empty_Spaces(BaseEstimator, TransformerMixin):
     """
-        This is a Class Used to Preprocess the data
+        This is a Class Used to Preprocess the data, By
+        Filling Missing Values with Standard Values That
+        Represents Missing Values, e.g numpy.nan.
     """
     
     def __init__(self, features=['TeamExp', 'ManagerExp', 'YearEnd','Length', 
