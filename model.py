@@ -22,7 +22,44 @@ class trainer:
             Example 1 level = 3, level_model = [[knn, svm, dt], [svm,knn],[svm]]
 
             note :- the model in the last level should be one else the first one is picked.
+
+
+            with_kmeans :- this argument will join all dataset into one and try to split them 
+            into n base learners.
         """
+
         self.levels = levels
         self.models = level_model
         self.register_level_size = {level_index:len(level_model[level_index]) for level_index in range(self.models)}
+        self._dataset = None
+
+    @property
+    def dataset(self):
+        return self._dataset
+    
+    @dataset.setter
+    def dataset(self, value=None):
+        if len(value) == self.register_level_size[0]:
+            self._dataset = value
+        elif len(value) > self.register_level_size[0]:
+            """
+                here the n-base dataset will be selected and the 
+                remaining will be added to the n-base selected
+            """
+            pass #Not implemented yet
+        else:
+            """
+                here all the dataset will be concated into 1
+                and splitted to n-base.
+            """
+            pass #Not implemented y
+
+
+    def fit(self):
+        pass
+
+    def __call__(self):
+        self.fit()
+
+    def predict(self,value):
+        pass
