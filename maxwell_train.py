@@ -1,5 +1,6 @@
 from process_data import *
-
+from model import StackEnsemble
+from sklearn.svm import SVR
 if __name__ == "__main__":
     all_features = ['size_D', 'duration_D', 'app', 'har', 'dba', 'ifc', 'source', 'nlan',
             'telonuse', 't01', 't02', 't03', 't04', 't05', 't06', 't07', 't08',
@@ -34,7 +35,15 @@ if __name__ == "__main__":
     (X_train, y_train), (X_test, y_test) = Split_Datato_Half(X,y,train_ratio=0.9,Stratified=False)
     
     #Fit scaler to train set
-    X_train = scaler.fit_transform(X=X_train)
+    X_train_sca = scaler.fit_transform(X=X_train)
 
     #transform test set
-    X_test = scaler.transform(X=X_test)
+    X_test_sca = scaler.transform(X=X_test)
+
+# from sklearn.cluster import KMeans
+# kmeans_instance = KMeans(n_clusters=2,n_init=1000)
+# predictions = kmeans_instance.fit_predict(X=X_train_sca, y=y_train)
+# print(f'predictons == {predictions}')
+# print(f'cluster 1 = {X_train[predictions==0]}, \ncluster 2 {X_train[predictions==1]}')
+
+learners = StackEnsemble(levels=3, level_model=[[SVR,SVR,SVR],[SVR,SVR],[SVR,SVR,SVR]])
