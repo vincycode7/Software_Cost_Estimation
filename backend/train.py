@@ -84,7 +84,6 @@ def main(args):
     learners.fit(X=X_train_sca, y=y_train, with_kmeans=with_kmeans,classification=False)
 
     print(f'shape shape  --> {X_train_sca.shape}')
-    exit(0)
 
     #load model
     preds = learners.predict(X_train_sca,prob_score=False)[0][0].reshape(-1)
