@@ -102,7 +102,7 @@ class WorkData {
   timeout;
   moveToNewPage = () => {
     this.timeout = setTimeout(() => {
-      window.location.assign("/src/table.html");
+      window.location.assign("./table.html");
     }, 5000);
   };
 
