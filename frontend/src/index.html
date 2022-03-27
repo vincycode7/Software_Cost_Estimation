@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./assets/css/tailwind.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="./assets/js/index.js"></script>
+
+    <link href="./assets/css/styles.css" rel="stylesheet" />
+
+    <title>phD work</title>
+  </head>
+  <body
+    onload="data.moveToNewPage(); data.setTimer();"
+    class="full-width bg-purple-50 h-screen"
+  >
+    <div class="w-full h-full">
+      <header class="w-full h-24 flex items-center">
+        <nav class="w-10/12 mx-auto">
+          <h2 class="text-xl slideDown font-medium capitalize text-gray-700">
+            Mathilda Imadojiemu
+          </h2>
+        </nav>
+      </header>
+      <main
+        class="w-10/12 fadeIn-delay mx-auto h-70 flex flex-col justify-center items-center"
+      >
+        <h1 class="text-4xl font-medium mb-8">
+          <span class="text-purple">Artificial</span> Intelligence
+        </h1>
+        <p class="text-xl font-medium text-gray-700">
+          Hello, welcome to my phD presentation, I will be glad to take through
+          all the steps
+        </p>
+        <div class="mt-32">
+          <p class="text-md text-gray-500">
+            You will be redirected in less than
+            <span id="timer" class="text-clifford fadeIn font-semibold"
+              ></span
+            >
+          </p>
+        </div>
+        <div class="p-4">
+            <button onclick="data.clearTimer()" class="text-sm mr-4 font-medium border hover:bg-clifford-300 hover:text-white hover:border-none border-clifford text-clifford p-3 focus:outline-none rounded-md">Stop redirect</button>
+            <button onclick="window.location.assign('/src/table.html')" class="text-sm font-medium bg-clifford hover:bg-clifford-300 text-white p-3 focus:outline-none rounded-md">Go to tables</button>
+        </div>
+      </main>
+      <footer></footer>
+    </div>
+    <script src="./assets/js/tailwind.min.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#4C2193",
+              "clifford-300": "#4C219390",
+            },
+          },
+        },
+      };
+
+      
+    </script>
+  </body>
+</html>
