@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./assets/css/tailwind.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="./assets/js/index.js"></script>
+
+    <link href="./assets/css/styles.css" rel="stylesheet" />
+
+    <title>phD work</title>
+  </head>
+  <body onload="allOnloadFuncs()" class="full-width h-screen">
+    <div class="w-full h-full fadeIn flex">
+      <aside class="w-2/12 h-full bg-white shadow-inner shadow-lg">
+        <h2
+          class="w-full text-2xl md:text-xl bg-gray-100 h-1/6 flex items-center font-semibold text-clifford"
+        >
+          <span class="w-8/12 mx-auto"> Data Tables</span>
+        </h2>
+        <div id="da" class="flex flex-col scroll"></div>
+      </aside>
+      <main
+        id="main"
+        class="w-full fadeIn bg-gray-50 h-screen flex align-items-center"
+      >
+        <div id="tableNotShowing" class="w-10/12 h-5/6 my-auto m-auto">
+          <div class="flex flex-col w-full items-center">
+            <img
+              class="illusImage fadeIn-delay"
+              src="./assets/images/illus.svg"
+              alt="illustration"
+            />
+            <p
+              class="text-xl w-6/12 text-center slideDown font-medium text-gray-400"
+            >
+              This space is empty, please click a button on the sidebar to
+              render a table
+            </p>
+          </div>
+        </div>
+        <div id="tableShowing" class="w-10/12 overflow-scroll h-5/6 my-auto m-auto">
+          <table id="t1" class="min-w-full bg-white shadow-sm rounded">
+            <thead id="thead" class="bg-gray-200"></thead>
+            <tbody id="tbody" class="divide-y divide-gray-100"></tbody>
+          </table>
+        </div>
+        <div class="p-4 absolute right-0">
+            <button onclick="window.location.assign('/src/index.html')" class="text-sm font-medium border focus:outline-none hover:bg-clifford-300 hover:text-white hover:border-none border-clifford text-clifford p-3 rounded-md">Go to main page</button>
+        </div>
+      </main>
+    </div>
+    <script src="./assets/js/tailwind.min.js"></script>
+    <script type="text/javascript">
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#4C2193",
+              "clifford-300": "#4C219390",
+            },
+          },
+        },
+      };
+
+      const allOnloadFuncs = () => {
+        data.createSidebar("da");
+        data.checkTableShowing();
+      };
+    </script>
+  </body>
+</html>

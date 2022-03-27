@@ -1,0 +1,64 @@
+.text-purple {
+  color: #4c2193;
+}
+.full-width {
+  width: 100vw;
+}
+.h-70 {
+  height: 70vh;
+}
+.getborder {
+  border-bottom: 0.6px solid #eae6ee;
+}
+.illusImage {
+  width: 45%;
+}
+.scroll {
+  height: 75vh;
+  overflow-y: auto;
+}
+.sideHeight{
+    height: 200px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes slide_down {
+  from {
+    opacity: 0;
+    transform: translateY(-30%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+.fadeIn {
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+.fadeIn-delay {
+  -webkit-animation: fadeIn 1s linear 1s both;
+  animation: fadeIn 0.5s linear 0.5s both;
+}
+.slideDown {
+  -webkit-animation: slide_down 0.3s linear both;
+  animation: slide_down 0.3s linear both;
+}
+#tableShowing::-webkit-scrollbar {
+  width: 0em;
+  height: 0em;
+}
+
+
+#tableShowing::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
