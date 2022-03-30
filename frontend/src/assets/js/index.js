@@ -1,32 +1,80 @@
+// New data structure
+// [{
+//  [{
+//      [{
+// 
+//      }]
+//  }]
+// }]
 const dataType = [
   {
-    name: "export csv",
+    name: "MaxWell",
     path: "../details/csv_files/email.csv",
   },
   {
-    name: "k means",
-    path: "../details/csv_files/email-password.csv",
-  },
-  {
-    name: "Get data",
+    name: "Maxwell Training With Kmean",
     path: "../details/csv_files/access-code.csv",
   },
   {
-    name: "see All",
+    name: "Maxwell Testing With Kmean",
     path: "../details/csv_files/access-password.csv",
   },
   {
-    name: "ai stuff",
+    name: "Maxwell Results With Kmean",
     path: "../details/csv_files/access-code.csv",
   },
   {
-    name: "drap mud",
+    name: "Maxwell Training Without Kmean",
     path: "../details/csv_files/access-code.csv",
   },
   {
-    name: "master",
+    name: "Maxwell Testing Without Kmean",
+    path: "../details/csv_files/access-password.csv",
+  },
+  {
+    name: "Maxwell Results Without Kmean",
     path: "../details/csv_files/access-code.csv",
   },
+  {
+    name: "Desh",
+    path: "../details/csv_files/email-password.csv",
+  },
+  {
+    name: "Desh Training With Kmean",
+    path: "../details/csv_files/access-code.csv",
+  },
+  {
+    name: "Desh Testing With Kmean",
+    path: "../details/csv_files/access-password.csv",
+  },
+  {
+    name: "Desh Results With Kmean",
+    path: "../details/csv_files/access-code.csv",
+  },
+  {
+    name: "Desh Training Without Kmean",
+    path: "../details/csv_files/access-code.csv",
+  },
+  {
+    name: "Desh Testing Without Kmean",
+    path: "../details/csv_files/access-password.csv",
+  },
+  {
+    name: "Desh Results Without Kmean",
+    path: "../details/csv_files/access-code.csv",
+  },
+  {
+    name: "Results",
+    path: "../details/csv_files/access-code.csv",
+  },
+  // {
+  //   name: "drap mud",
+  //   path: "../details/csv_files/access-code.csv",
+  // },
+  // {
+  //   name: "master",
+  //   path: "../details/csv_files/access-code.csv",
+  // },
 ];
 
 class WorkData {
