@@ -1,80 +1,129 @@
-// New data structure
-// [{
-//  [{
-//      [{
-// 
-//      }]
-//  }]
-// }]
 const dataType = [
   {
+    id: "id0",
     name: "MaxWell",
-    path: "../details/csv_files/email.csv",
+    listInner: {
+      list: [
+        {
+          name: "MaxWell",
+          path: "../details/csv_files/access-code.csv",
+          header: true,
+          buttons: [
+            {
+              name: "MaxWell",
+              path: "../details/csv_files/email.csv",
+              header: false,
+            },
+            {
+              name: "MaxWell",
+              path: "../details/csv_files/email.csv",
+              header: false,
+            },
+            {
+              name: "MaxWell",
+              path: "../details/csv_files/email.csv",
+              header: true,
+            },
+          ],
+        },
+        {
+          name: "MaxWell",
+          path: "../details/csv_files/email.csv",
+          header: true,
+          buttons: []
+        },
+        {
+          name: "MaxWell",
+          path: "../details/csv_files/email.csv",
+          header: false,
+          buttons:[]
+        },
+      ],
+    },
   },
   {
+    id: "id1",
     name: "Maxwell Training With Kmean",
-    path: "../details/csv_files/access-code.csv",
+    listInner: {
+      list: [
+        {
+          name: "MaxWell",
+          path: "../details/csv_files/email.csv",
+          header: true,
+          buttons: [
+            {
+              name: "MaxWell",
+              header: false,
+              path: "../details/csv_files/email.csv",
+            },
+            {
+              name: "MaxWell",
+              path: "../details/csv_files/email.csv",
+              header: false,
+            },
+            {
+              name: "MaxWell",
+              path: "../details/csv_files/email.csv",
+              header: true,
+            },
+          ],
+        },
+        {
+          name: "MaxWell",
+          path: "../details/csv_files/email.csv",
+          header: true,
+          buttons: []
+        },
+        {
+          name: "MaxWell",
+          path: "../details/csv_files/email.csv",
+          header: true,
+          buttons: []
+        },
+      ],
+    },
   },
   {
+    id: "id2",
     name: "Maxwell Testing With Kmean",
-    path: "../details/csv_files/access-password.csv",
+    listInner: {
+      list: [
+        {
+          name: "MaxWell",
+          path: "../details/csv_files/email.csv",
+          buttons: [
+            {
+              name: "MaxWell",
+              path: "../details/csv_files/email.csv",
+              header: true,
+            },
+            {
+              name: "MaxWell",
+              path: "../details/csv_files/access-code.csv",
+              header: false,
+            },
+            {
+              name: "MaxWell",
+              header: true,
+              path: "../details/csv_files/email.csv",
+            },
+          ],
+        },
+        {
+          name: "MaxWell",
+          header: false,
+          path: "../details/csv_files/email.csv",
+          buttons: []
+        },
+        {
+          name: "MaxWell",
+          header: false,
+          path: "../details/csv_files/email.csv",
+          buttons: []
+        },
+      ],
+    },
   },
-  {
-    name: "Maxwell Results With Kmean",
-    path: "../details/csv_files/access-code.csv",
-  },
-  {
-    name: "Maxwell Training Without Kmean",
-    path: "../details/csv_files/access-code.csv",
-  },
-  {
-    name: "Maxwell Testing Without Kmean",
-    path: "../details/csv_files/access-password.csv",
-  },
-  {
-    name: "Maxwell Results Without Kmean",
-    path: "../details/csv_files/access-code.csv",
-  },
-  {
-    name: "Desh",
-    path: "../details/csv_files/email-password.csv",
-  },
-  {
-    name: "Desh Training With Kmean",
-    path: "../details/csv_files/access-code.csv",
-  },
-  {
-    name: "Desh Testing With Kmean",
-    path: "../details/csv_files/access-password.csv",
-  },
-  {
-    name: "Desh Results With Kmean",
-    path: "../details/csv_files/access-code.csv",
-  },
-  {
-    name: "Desh Training Without Kmean",
-    path: "../details/csv_files/access-code.csv",
-  },
-  {
-    name: "Desh Testing Without Kmean",
-    path: "../details/csv_files/access-password.csv",
-  },
-  {
-    name: "Desh Results Without Kmean",
-    path: "../details/csv_files/access-code.csv",
-  },
-  {
-    name: "Results",
-    path: "../details/csv_files/access-code.csv",
-  },
-  // {
-  //   name: "drap mud",
-  //   path: "../details/csv_files/access-code.csv",
-  // },
-  // {
-  //   name: "master",
-  //   path: "../details/csv_files/access-code.csv",
-  // },
 ];
 
 class WorkData {
@@ -107,35 +156,26 @@ class WorkData {
     document.getElementById("thead").innerHTML = headcontent;
     document.getElementById("tbody").innerHTML = bodycontent;
   }
-  async fetchData(e) {
+  async fetchData(path) {
     this.isTableShowing = true;
 
     this.checkTableShowing();
     let all, init;
-    let path = dataType.find((item) => {
-      return item.name.toLowerCase() === e.target.innerText.toLowerCase();
-    });
-    const response = await fetch(path.path);
+
+    const response = await fetch(path);
     const realData = await response.text();
     all = realData.split("\n");
     if (init !== all.length) {
       init = all.length;
       var arr = [];
       all.forEach((el) => {
-        el = el.split(";");
+        el = el.split(";") || el.split(",");
         arr.push(el);
       });
 
       this.createTable(arr);
     }
   }
-
-  createSidebar = (id) => {
-    let data = document.getElementById(id);
-    dataType.forEach((project) => {
-      return (data.innerHTML += `<button onclick="data.fetchData(event)" class='list-none h-16 slideDown focus:outline-none  font-medium capitalize text-gray-600 hover:bg-clifford-300 focus:bg-clifford focus:text-white hover:text-white transition-all duration-300 cursor-pointer'><span class='flex getborder hover:border-none  items-center h-full w-8/12 mx-auto'>${project.name}<span></button>`);
-    });
-  };
 
   checkTableShowing = () => {
     if (data.isTableShowing === false) {
@@ -168,10 +208,10 @@ class WorkData {
       }
     }, 1000);
   };
-  clearTimer=()=>{
+  clearTimer = () => {
     clearInterval(this.jump);
-    clearTimeout(this.timeout)
-  }
+    clearTimeout(this.timeout);
+  };
 }
 
 let data = new WorkData("data");
