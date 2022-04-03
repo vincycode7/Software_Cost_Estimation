@@ -14,11 +14,21 @@
   width: 45%;
 }
 .scroll {
-  height: 75vh;
+  height: 80vh;
   overflow-y: auto;
+}
+.scroll::-webkit-scrollbar {
+  width: 1px;
+}
+ s
+.scroll::-webkit-scrollbar-thumb {
+  background-color: #ccc;
 }
 .sideHeight{
     height: 200px;
+}
+.listItem{
+  height: 500px;
 }
 
 @keyframes fadeIn {

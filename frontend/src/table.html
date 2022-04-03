@@ -4,6 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./assets/js/babel.min.js"></script>
+    <script
+      crossorigin
+      src="./assets/js/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="./assets/js/react-dom.dev.js"
+    ></script>
     <link href="./assets/css/tailwind.min.css" rel="stylesheet" />
     <script type="text/javascript" src="./assets/js/index.js"></script>
 
@@ -12,45 +21,7 @@
     <title>phD work</title>
   </head>
   <body onload="allOnloadFuncs()" class="full-width h-screen">
-    <div class="w-full h-full fadeIn flex">
-      <aside class="w-2/12 h-full bg-white shadow-inner shadow-lg">
-        <h2
-          class="w-full text-2xl md:text-xl bg-gray-100 h-1/6 flex items-center font-semibold text-clifford"
-        >
-          <span class="w-8/12 mx-auto"> Data Tables</span>
-        </h2>
-        <div id="da" class="flex flex-col scroll"></div>
-      </aside>
-      <main
-        id="main"
-        class="w-full fadeIn bg-gray-50 h-screen flex align-items-center"
-      >
-        <div id="tableNotShowing" class="w-10/12 h-5/6 my-auto m-auto">
-          <div class="flex flex-col w-full items-center">
-            <img
-              class="illusImage fadeIn-delay"
-              src="./assets/images/illus.svg"
-              alt="illustration"
-            />
-            <p
-              class="text-xl w-6/12 text-center slideDown font-medium text-gray-400"
-            >
-              This space is empty, please click a button on the sidebar to
-              render a table
-            </p>
-          </div>
-        </div>
-        <div id="tableShowing" class="w-10/12 overflow-scroll h-5/6 my-auto m-auto">
-          <table id="t1" class="min-w-full bg-white shadow-sm rounded">
-            <thead id="thead" class="bg-gray-200"></thead>
-            <tbody id="tbody" class="divide-y divide-gray-100"></tbody>
-          </table>
-        </div>
-        <div class="p-4 absolute right-0">
-            <button onclick="window.location.assign('./index.html')" class="text-sm font-medium border focus:outline-none hover:bg-clifford-300 hover:text-white hover:border-none border-clifford text-clifford p-3 rounded-md">Go to main page</button>
-        </div>
-      </main>
-    </div>
+    <div id="da" class="w-full h-full fadeIn flex"></div>
     <script src="./assets/js/tailwind.min.js"></script>
     <script type="text/javascript">
       tailwind.config = {
@@ -65,9 +36,165 @@
       };
 
       const allOnloadFuncs = () => {
-        data.createSidebar("da");
         data.checkTableShowing();
       };
+    </script>
+    <script type="text/babel">
+      const Name = ({ name }) => {
+        return <span className="text-xl capitalize font-bold">{name}</span>;
+      };
+      const ButtonSet = ({ items, changeName }) => {
+        const getPath = (item) => {
+          data.fetchData(item.path);
+        };
+        return (
+          <div className="flex w-11/12 mx-auto">
+            {items.map((each, index) => (
+              <button
+                className="text-sm w-32 border-l focus:outline-none focus:bg-clifford bg-clifford-300 text-white h-12 font-medium"
+                onClick={() => getPath(each)}
+                key={index}
+              >
+                {each.name}
+              </button>
+            ))}
+          </div>
+        );
+      };
+      // each item on the sidebar
+      const SideBarEach = ({ project, index, changeName, updateList }) => {
+        const [openDrop, setOpenDrop] = React.useState(false);
+        const dropDownState = () => {
+          setOpenDrop(!openDrop);
+        };
+        const getPath = (item) => {
+          data.fetchData(item.path);
+          changeName(item.name);
+          updateList(item.buttons? item.buttons : []);
+        };
+        return (
+          <div
+            key={project.id}
+            className="focus-within:bg-clifford focus-within:text-white list-none mb-8 listItem slideDown focus:outline-none font-medium capitalize text-gray-600 hover:bg-clifford focus:bg-clifford focus:text-white hover:text-white transition-all duration-300 h-max cursor-pointer"
+          >
+            <span
+              onClick={() => dropDownState()}
+              className="flex getborder items-center text-left hover:border-none h-16 w-8/12 mx-auto"
+            >
+              {project.name}
+            </span>
+            <div
+              className={`${openDrop === false ? "hidden" : ""} fadeIn w-full`}
+            >
+              {project.listInner.list.map((item, index) => (
+                <React.Fragment key={item.name + index}>
+                  <button
+                    onClick={() => getPath(item)}
+                    className="w-full h-12 hover:bg-gray-50 hover:text-clifford-300 focus:outline-none focus:bg-gray-200 focus:text-clifford-300"
+                    
+                  >
+                    <span
+                      className={`w-6/12 h-full flex items-center mx-auto getborder`}
+                    >
+                      {item.name}
+                    </span>
+                  </button>
+                </React.Fragment>
+              ))}
+            </div>
+          </div>
+        );
+      };
+
+      //side bar class
+      class TablePage extends React.Component {
+        state = {
+          name: "Welcome",
+          projectList: [],
+        };
+
+        changeName = (name) => {
+          this.setState({ name: name });
+        };
+        updateActiveProject = (list) => {
+          this.setState({ projectList: list });
+        };
+
+        render() {
+          return (
+            <React.Fragment>
+              <aside className="w-2/12 h-full bg-white shadow-inner shadow-lg">
+                <h2 className="w-full text-2xl md:text-xl bg-gray-100 h-1/6 flex items-center font-semibold text-clifford">
+                  <span className="w-8/12 mx-auto">Data Tables</span>
+                </h2>
+                <ul className="flex flex-col scroll">
+                  {dataType.map((project, index) => (
+                    <SideBarEach
+                      key={project.id}
+                      project={project}
+                      index={index}
+                      changeName={(name) => this.changeName(name)}
+                      updateList={(list) => this.updateActiveProject(list)}
+                    />
+                  ))}
+                </ul>
+              </aside>
+              <main
+                id="main"
+                className="w-full fadeIn bg-gray-50 h-screen flex flex-col"
+              >
+                <div
+                  id="topBar"
+                  className={`flex justify-between w-11/12 mx-auto h-16 items-center`}
+                >
+                  <div>
+                    <Name name={this.state.name} />
+                  </div>
+                  <div className="p-4">
+                    <button
+                      onClick={()=> window.location.assign('./index.html')}
+                      className="text-sm font-medium border focus:outline-none hover:bg-clifford-300 hover:text-white hover:border-none border-clifford text-clifford p-3 rounded-md"
+                    >
+                      Go to main page
+                    </button>
+                  </div>
+                </div>
+                <div className="w-full">
+                  <ButtonSet
+                    items={this.state.projectList}
+                    changeName={(name) => this.changeName(name)}
+                  />
+                </div>
+                <div id="tableNotShowing" className="w-10/12 h-5/6 my-auto m-auto">
+                  <div className="flex flex-col w-full items-center">
+                    <img
+                      className="illusImage fadeIn-delay"
+                      src="./assets/images/illus.svg"
+                      alt="illustration"
+                    />
+                    <p className="text-xl w-6/12 text-center slideDown font-medium text-gray-400">
+                      This space is empty, please click a button on the sidebar
+                      to render a table
+                    </p>
+                  </div>
+                </div>
+                <div
+                  id="tableShowing"
+                  className="w-10/12 overflow-scroll h-5/6 my-auto m-auto"
+                >
+                 
+                  <table id="t1" className="min-w-full bg-white shadow-sm rounded">
+                    <thead id="thead" className="bg-gray-200"></thead>
+                    <tbody id="tbody" className="divide-y divide-gray-100"></tbody>
+                  </table>
+                </div>
+              </main>
+            </React.Fragment>
+          );
+        }
+      }
+      const sideBarRoot = ReactDOM.createRoot(document.getElementById("da"));
+      sideBarRoot.render(<TablePage />);
     </script>
   </body>
 </html>
