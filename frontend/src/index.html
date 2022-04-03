@@ -12,7 +12,6 @@
     <title>phD work</title>
   </head>
   <body
-    onload="data.moveToNewPage(); data.setTimer();"
     class="full-width bg-purple-50 h-screen"
   >
     <div class="w-full h-full">
@@ -32,17 +31,8 @@
         <p class="text-xl font-medium text-gray-700">
           Artificial Intelligence
         </p>
-        <div class="mt-32">
-          <p class="text-md text-gray-500">
-            You will be redirected in less than
-            <span id="timer" class="text-clifford fadeIn font-semibold"
-              ></span
-            >
-          </p>
-        </div>
         <div class="p-4">
-            <button onclick="data.clearTimer()" class="text-sm mr-4 font-medium border hover:bg-clifford-300 hover:text-white hover:border-none border-clifford text-clifford p-3 focus:outline-none rounded-md">Stop redirect</button>
-            <button onclick="window.location.assign('./table.html')" class="text-sm font-medium bg-clifford hover:bg-clifford-300 text-white p-3 focus:outline-none rounded-md">Go to tables</button>
+            <button onclick="window.location.assign('./table.html')" class="text-sm font-medium bg-clifford hover:bg-clifford-300 text-white w-52 h-12 focus:outline-none rounded-md">Go to tables</button>
         </div>
       </main>
       <footer></footer>

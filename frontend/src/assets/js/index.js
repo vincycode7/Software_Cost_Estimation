@@ -187,31 +187,6 @@ class WorkData {
     }
   };
 
-  timeout;
-  moveToNewPage = () => {
-    this.timeout = setTimeout(() => {
-      window.location.assign("./table.html");
-    }, 5000);
-  };
-
-  timer = 6;
-  jump;
-  setTimer = () => {
-    this.jump = setInterval(() => {
-      if (this.timer > 0) {
-        this.timer -= 1;
-        let seconds = "seconds";
-        if (this.timer === 1 || this.timer === 0) {
-          seconds = "second";
-        }
-        document.getElementById("timer").innerText = `${this.timer} ${seconds}`;
-      }
-    }, 1000);
-  };
-  clearTimer = () => {
-    clearInterval(this.jump);
-    clearTimeout(this.timeout);
-  };
 }
 
 let data = new WorkData("data");
