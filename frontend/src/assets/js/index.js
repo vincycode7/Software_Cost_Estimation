@@ -5,125 +5,61 @@ const dataType = [
     listInner: {
       list: [
         {
-          name: "MaxWell",
+          name: "MaxWell With Kmeans",
           path: "../details/csv_files/access-code.csv",
           header: true,
           buttons: [
             {
-              name: "MaxWell",
+              name: "Raw Data",
               path: "../details/csv_files/email.csv",
               header: false,
-            },
-            {
-              name: "MaxWell",
-              path: "../details/csv_files/email.csv",
-              header: false,
-            },
-            {
-              name: "MaxWell",
-              path: "../details/csv_files/email.csv",
-              header: true,
-            },
+            }
           ],
         },
         {
-          name: "MaxWell",
+          name: "MaxWell Without Kmeans",
           path: "../details/csv_files/email.csv",
           header: true,
-          buttons: []
-        },
-        {
-          name: "MaxWell",
-          path: "../details/csv_files/email.csv",
-          header: false,
-          buttons:[]
-        },
+          buttons: [{
+            name: "Raw Data",
+            path: "../details/csv_files/email.csv",
+            header: false,
+          }]
+        }
       ],
     },
   },
   {
     id: "id1",
-    name: "Maxwell Training With Kmean",
+    name: "Desh",
     listInner: {
       list: [
         {
-          name: "MaxWell",
+          name: "Desh With Kmeans",
           path: "../details/csv_files/email.csv",
           header: true,
           buttons: [
             {
-              name: "MaxWell",
+              name: "Raw Data",
               header: false,
               path: "../details/csv_files/email.csv",
-            },
-            {
-              name: "MaxWell",
-              path: "../details/csv_files/email.csv",
-              header: false,
-            },
-            {
-              name: "MaxWell",
-              path: "../details/csv_files/email.csv",
-              header: true,
-            },
+            }
+            
           ],
         },
         {
-          name: "MaxWell",
+          name: "Desh Without Kmeans",
           path: "../details/csv_files/email.csv",
           header: true,
-          buttons: []
-        },
-        {
-          name: "MaxWell",
-          path: "../details/csv_files/email.csv",
-          header: true,
-          buttons: []
-        },
+          buttons: [{
+            name: "Raw Data",
+            header: false,
+            path: "../details/csv_files/email.csv",
+          }]
+        }
       ],
     },
-  },
-  {
-    id: "id2",
-    name: "Maxwell Testing With Kmean",
-    listInner: {
-      list: [
-        {
-          name: "MaxWell",
-          path: "../details/csv_files/email.csv",
-          buttons: [
-            {
-              name: "MaxWell",
-              path: "../details/csv_files/email.csv",
-              header: true,
-            },
-            {
-              name: "MaxWell",
-              path: "../details/csv_files/access-code.csv",
-              header: false,
-            },
-            {
-              name: "MaxWell",
-              header: true,
-              path: "../details/csv_files/email.csv",
-            },
-          ],
-        },
-        {
-          name: "MaxWell",
-          header: false,
-          path: "../details/csv_files/email.csv",
-          buttons: []
-        },
-        {
-          name: "MaxWell",
-          header: false,
-          path: "../details/csv_files/email.csv",
-          buttons: []
-        },
-      ],
-    },
-  },
+  }
 ];
 
 class WorkData {
