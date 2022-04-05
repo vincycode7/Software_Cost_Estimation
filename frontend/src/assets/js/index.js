@@ -31,16 +31,6 @@ const dataType = [
             }
           ],
         },
-        {
-          name: "MaxWell With Kmeans",
-          path: "../details/csv_files/email.csv",
-          header: true,
-          buttons: [{
-            name: "Raw Data",
-            path: "../details/csv_files/email.csv",
-            header: false,
-          }]
-        }
       ],
     },
   },
