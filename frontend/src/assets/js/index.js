@@ -17,6 +17,114 @@ const dataType = [
           ],
         },
         {
+          name: "MaxWell With Kmeans",
+          path: "../details/csv_files/access-code.csv",
+          header: true,
+          buttons: [
+            {
+              name: "Raw Data",
+              path: "../details/csv_files/email.csv",
+              header: false,
+            }
+          ],
+        },
+        {
+          name: "MaxWell With Kmeans",
+          path: "../details/csv_files/access-code.csv",
+          header: true,
+          buttons: [
+            {
+              name: "Raw Data",
+              path: "../details/csv_files/email.csv",
+              header: false,
+            }
+          ],
+        },
+        {
+          name: "MaxWell With Kmeans",
+          path: "../details/csv_files/access-code.csv",
+          header: true,
+          buttons: [
+            {
+              name: "Raw Data",
+              path: "../details/csv_files/email.csv",
+              header: false,
+            }
+          ],
+        },
+        {
+          name: "MaxWell With Kmeans",
+          path: "../details/csv_files/access-code.csv",
+          header: true,
+          buttons: [
+            {
+              name: "Raw Data",
+              path: "../details/csv_files/email.csv",
+              header: false,
+            }
+          ],
+        },
+        {
+          name: "MaxWell With Kmeans",
+          path: "../details/csv_files/access-code.csv",
+          header: true,
+          buttons: [
+            {
+              name: "Raw Data",
+              path: "../details/csv_files/email.csv",
+              header: false,
+            }
+          ],
+        },
+        {
+          name: "MaxWell With Kmeans",
+          path: "../details/csv_files/access-code.csv",
+          header: true,
+          buttons: [
+            {
+              name: "Raw Data",
+              path: "../details/csv_files/email.csv",
+              header: false,
+            }
+          ],
+        },
+        {
+          name: "MaxWell With Kmeans",
+          path: "../details/csv_files/access-code.csv",
+          header: true,
+          buttons: [
+            {
+              name: "Raw Data",
+              path: "../details/csv_files/email.csv",
+              header: false,
+            }
+          ],
+        },
+        {
+          name: "MaxWell With Kmeans",
+          path: "../details/csv_files/access-code.csv",
+          header: true,
+          buttons: [
+            {
+              name: "Raw Data",
+              path: "../details/csv_files/email.csv",
+              header: false,
+            }
+          ],
+        },
+        {
+          name: "MaxWell With Kmeans",
+          path: "../details/csv_files/access-code.csv",
+          header: true,
+          buttons: [
+            {
+              name: "Raw Data",
+              path: "../details/csv_files/email.csv",
+              header: false,
+            }
+          ],
+        },
+        {
           name: "MaxWell Without Kmeans",
           path: "../details/csv_files/email.csv",
           header: true,
