@@ -5,19 +5,34 @@ const dataType = [
     listInner: {
       list: [
         {
-          name: "MaxWell With Kmeans",
-          path: "../details/csv_files/access-code.csv",
+          name: "Preprocessing Result",
+          path: "../../backend/precrossing_data_ouput/maxwell/dataset/maxwell_raw.csv",
           header: true,
           buttons: [
             {
               name: "Raw Data",
+              path: "../../backend/precrossing_data_ouput/maxwell/dataset/maxwell_raw.csv",
+              header: false,
+            },
+            {
+              name: "Encode Date",
+              path: "../details/csv_files/email.csv",
+              header: false,
+            },
+            {
+              name: "Scaled Date",
+              path: "../details/csv_files/email.csv",
+              header: false,
+            },
+            {
+              name: "Transform Date",
               path: "../details/csv_files/email.csv",
               header: false,
             }
           ],
         },
         {
-          name: "MaxWell Without Kmeans",
+          name: "MaxWell With Kmeans",
           path: "../details/csv_files/email.csv",
           header: true,
           buttons: [{
