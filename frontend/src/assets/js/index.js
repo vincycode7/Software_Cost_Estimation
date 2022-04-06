@@ -85,6 +85,19 @@ const dataType = [
             }
           ],
         },
+        {
+          name: "Maxwell Without Kmeans testing length",
+          path: "../details/csv_files/email.csv",
+          header: true,
+          buttons: [
+            {
+              name: "Raw Data",
+              header: false,
+              path: "../details/csv_files/email.csv",
+            }
+            
+          ],
+        },
       ],
     },
   },
