@@ -15,17 +15,71 @@ const dataType = [
               header: false,
             },
             {
-              name: "Encode Date",
+              name: "Encoded Data",
               path: "../details/csv_files/email.csv",
               header: false,
             },
             {
-              name: "Scaled Date",
+              name: "Scaled Data",
               path: "../details/csv_files/email.csv",
               header: false,
             },
             {
-              name: "Transform Date",
+              name: "Transformed Data",
+              path: "../details/csv_files/email.csv",
+              header: false,
+            }
+          ],
+        },
+        {
+          name: "Preprocessing Result",
+          path: "../../backend/precrossing_data_ouput/maxwell/dataset/maxwell_raw.csv",
+          header: true,
+          buttons: [
+            {
+              name: "Raw Data",
+              path: "../../backend/precrossing_data_ouput/maxwell/dataset/maxwell_raw.csv",
+              header: false,
+            },
+            {
+              name: "Encoded Data",
+              path: "../details/csv_files/email.csv",
+              header: false,
+            },
+            {
+              name: "Scaled Data",
+              path: "../details/csv_files/email.csv",
+              header: false,
+            },
+            {
+              name: "Transformed Data",
+              path: "../details/csv_files/email.csv",
+              header: false,
+            }
+          ],
+        },
+        {
+          name: "Preprocessing Result",
+          path: "../../backend/precrossing_data_ouput/maxwell/dataset/maxwell_raw.csv",
+          header: true,
+          buttons: [
+            {
+              name: "Raw Data",
+              path: "../../backend/precrossing_data_ouput/maxwell/dataset/maxwell_raw.csv",
+              header: false,
+            },
+            {
+              name: "Encoded Data",
+              path: "../details/csv_files/email.csv",
+              header: false,
+            },
+            {
+              name: "Scaled Data",
+              path: "../details/csv_files/email.csv",
+              header: false,
+            },
+            {
+              name: "Transformed Data",
               path: "../details/csv_files/email.csv",
               header: false,
             }
@@ -123,7 +177,8 @@ class WorkData {
       init = all.length;
       var arr = [];
       all.forEach((el) => {
-        el = el.split(";") || el.split(",");
+        let regex = /[;,]+/
+        el = el.split(regex);
         arr.push(el);
       });
 
