@@ -3,7 +3,7 @@ from sklearn.metrics import accuracy_score, f1_score, recall_score, precision_sc
 import numpy as np
 
 class StackEnsemble:
-    def __init__(self,levels=2, level_model=None, with_kmeans=True):
+    def __init__(self,levels=2, level_model=None, with_kmeans=True,dataset_name="default_name"):
         """ 
             This is the stack ensemble trainer that trains on different 
             base learners.
@@ -62,6 +62,7 @@ class StackEnsemble:
         self.registed_level_size = {level_index:len(self.models[level_index]) for level_index in range(len(self.models))}
         self._dataset = None
         self.with_kmeans = None
+        self.dataset_name = dataset_name
 
     def fit(self, X, y, with_kmeans=True, classification=False):
         #check X
@@ -88,8 +89,30 @@ class StackEnsemble:
 
         self.with_kmeans = with_kmeans
 
+        dset_name_x = 'dataset/'+'with_kmeans: '+ str(self.with_kmeans) +  self.dataset_name+'_x_before_split.csv'
+        dset_name_y = 'dataset/'+'with_kmeans: '+ str(self.with_kmeans) +  self.dataset_name+'_y_before_split.csv'
+        
+        # print(f"Dataset before the split: X: {X} \n")
+        np.savetxt(dset_name_y, y, delimiter=',') 
+
+        # print(f"y: {y} \n")
+        np.savetxt(dset_name_x, X, delimiter=',') 
+        # print(f"together is: {np.concatenate((X,y.reshape(-1,1)),axis=1)}")
         #split with kmeans or not
         self.dataset = self.split_with_kmeans(X,y,n_clusters=len(self.models[0])) if self.with_kmeans else [[X,y]] #returns list of n dataset
+
+        counter=1
+        for each_split_dset in self.dataset:
+            dset_name_x = 'dataset/'+'with_kmeans: '+ str(self.with_kmeans) + self.dataset_name +'_x'+str(counter)+'_after_split.csv'
+            dset_name_y = 'dataset/'+'with_kmeans: '+ str(self.with_kmeans) +  self.dataset_name+'_y'+str(counter)+'_after_split.csv'
+            # print(f"counter: {counter}")
+            # print(f"Dataset after the split: X: {each_split_dset[0]} \n")
+            np.savetxt(dset_name_x, each_split_dset[0], delimiter=',') 
+
+            # print(f"y: {each_split_dset[1]} \n")
+            np.savetxt(dset_name_y, each_split_dset[1], delimiter=',') 
+            counter += 1
+
         #train
         self.train(classification=classification)
 
@@ -207,6 +230,20 @@ class StackEnsemble:
                 self.models[each_level] = [each_model.fit(self.dataset[0][0],self.dataset[0][1].reshape(-1)) for each_model in self.models[each_level]] #pass same dataset to all models
 
             self.dataset = self.form_nxt_dset(self.models,each_level,self.dataset,train=True,classification=classification) if each_level <= len(self.models) else 0
+            counter=1
+            for each_split_dset in self.dataset:
+                dset_name_x = 'dataset/'+'with_kmeans: '+ str(self.with_kmeans) +  self.dataset_name+'_x'+'level_'+str(each_level)+'learner'+'algorithm'+str(counter)+'_during_training.csv'
+                dset_name_y = 'dataset/'+'with_kmeans: '+ str(self.with_kmeans) +  self.dataset_name+'_y'+'level_'+str(each_level)+'learner'+'algorithm'+str(counter)+'_during_training.csv'
+
+                # print(f"counter: {counter}")
+                # print(f"Dataset created after previous level {each_level}")
+                np.savetxt(dset_name_x, self.dataset[0][0], delimiter=',') 
+
+                # print(f"split: X: {self.dataset[0][0]} \n")
+                # print(f"y: {self.dataset[0][1]} \n")
+                np.savetxt(dset_name_y, self.dataset[0][1], delimiter=',') 
+                counter += 1
+                
 
     def form_nxt_dset(self, models=None, current_level=None,dataset=None,train=True,classification=False):
         """ Used to form next dataset """
