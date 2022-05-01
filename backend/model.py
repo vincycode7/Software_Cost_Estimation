@@ -89,8 +89,8 @@ class StackEnsemble:
 
         self.with_kmeans = with_kmeans
 
-        dset_name_x = 'dataset/'+'with_kmeans: '+ str(self.with_kmeans) +  self.dataset_name+'_x_before_split.csv'
-        dset_name_y = 'dataset/'+'with_kmeans: '+ str(self.with_kmeans) +  self.dataset_name+'_y_before_split.csv'
+        dset_name_x = 'dataset/'+'with_kmeans_'+ str(self.with_kmeans) +  self.dataset_name+'_x_before_split.csv'
+        dset_name_y = 'dataset/'+'with_kmeans_'+ str(self.with_kmeans) +  self.dataset_name+'_y_before_split.csv'
         
         # print(f"Dataset before the split: X: {X} \n")
         np.savetxt(dset_name_y, y, delimiter=',') 
@@ -103,8 +103,8 @@ class StackEnsemble:
 
         counter=1
         for each_split_dset in self.dataset:
-            dset_name_x = 'dataset/'+'with_kmeans: '+ str(self.with_kmeans) + self.dataset_name +'_x'+str(counter)+'_after_split.csv'
-            dset_name_y = 'dataset/'+'with_kmeans: '+ str(self.with_kmeans) +  self.dataset_name+'_y'+str(counter)+'_after_split.csv'
+            dset_name_x = 'dataset/'+'with_kmeans_'+ str(self.with_kmeans) + self.dataset_name +'_x'+str(counter)+'_after_split.csv'
+            dset_name_y = 'dataset/'+'with_kmeans_'+ str(self.with_kmeans) +  self.dataset_name+'_y'+str(counter)+'_after_split.csv'
             # print(f"counter: {counter}")
             # print(f"Dataset after the split: X: {each_split_dset[0]} \n")
             np.savetxt(dset_name_x, each_split_dset[0], delimiter=',') 
@@ -232,8 +232,8 @@ class StackEnsemble:
             self.dataset = self.form_nxt_dset(self.models,each_level,self.dataset,train=True,classification=classification) if each_level <= len(self.models) else 0
             counter=1
             for each_split_dset in self.dataset:
-                dset_name_x = 'dataset/'+'with_kmeans: '+ str(self.with_kmeans) +  self.dataset_name+'_x'+'level_'+str(each_level)+'learner'+'algorithm'+str(counter)+'_during_training.csv'
-                dset_name_y = 'dataset/'+'with_kmeans: '+ str(self.with_kmeans) +  self.dataset_name+'_y'+'level_'+str(each_level)+'learner'+'algorithm'+str(counter)+'_during_training.csv'
+                dset_name_x = 'dataset/'+'with_kmeans_'+ str(self.with_kmeans) +  self.dataset_name+'_x'+'level_'+str(each_level)+'learner'+'algorithm'+str(counter)+'_during_training.csv'
+                dset_name_y = 'dataset/'+'with_kmeans_'+ str(self.with_kmeans) +  self.dataset_name+'_y'+'level_'+str(each_level)+'learner'+'algorithm'+str(counter)+'_during_training.csv'
 
                 # print(f"counter: {counter}")
                 # print(f"Dataset created after previous level {each_level}")
