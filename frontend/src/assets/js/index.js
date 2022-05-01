@@ -48,59 +48,59 @@ const dataType = [
         },
         {
           name: "Maxwell With Kmeans",
-          path: "../../backend/dataset/with_kmeans: 1maxwell_x_before_split.csv",
+          path: "../../backend/dataset/with_kmeans_1maxwell_x_before_split.csv",
           header: true,
           buttons: [
             {
               name: "X Before Split",
-              path: "../../backend/dataset/with_kmeans: 1maxwell_x_before_split.csv",
+              path: "../../backend/dataset/with_kmeans_1maxwell_x_before_split.csv",
               header: false,
             },
             {
               name: "y Before Split",
-              path: "../../backend/dataset/with_kmeans: 1maxwell_y_before_split.csv",
+              path: "../../backend/dataset/with_kmeans_1maxwell_y_before_split.csv",
               header: false,
             },
             {
               name: "X KNN Learner 1 Input",
-              path: "../../backend/dataset/with_kmeans: 1maxwell_x1_after_split.csv",
+              path: "../../backend/dataset/with_kmeans_1maxwell_x1_after_split.csv",
               header: false,
             },
             {
               name: "y KNN Learner 1 Input",
-              path: "../../backend/dataset/with_kmeans: 1maxwell_y1_after_split.csv",
+              path: "../../backend/dataset/with_kmeans_1maxwell_y1_after_split.csv",
               header: false,
             },
             {
               name: "X Lasso Learner 1 Input",
-              path: "../../backend/dataset/with_kmeans: 1maxwell_x2_after_split.csv",
+              path: "../../backend/dataset/with_kmeans_1maxwell_x2_after_split.csv",
               header: false,
             },
             {
               name: "y Lasso Learner 1 Input",
-              path: "../../backend/dataset/with_kmeans: 1maxwell_y2_after_split.csv",
+              path: "../../backend/dataset/with_kmeans_1maxwell_y2_after_split.csv",
               header: false,
             },
 
 
             {
               name: "X Learner 1 Output",
-              path: "../../backend/dataset/with_kmeans: 1maxwell_xlevel_0learneralgorithm1_during_training.csv",
+              path: "../../backend/dataset/with_kmeans_1maxwell_xlevel_0learneralgorithm1_during_training.csv",
               header: false,
             },
             {
               name: "y Learner 1 Output",
-              path: "../../backend/dataset/with_kmeans: 1maxwell_ylevel_0learneralgorithm1_during_training.csv",
+              path: "../../backend/dataset/with_kmeans_1maxwell_ylevel_0learneralgorithm1_during_training.csv",
               header: false,
             },
             {
               name: "X Learner 2 Output",
-              path: "../../backend/dataset/with_kmeans: 1maxwell_xlevel_1learneralgorithm1_during_training.csv",
+              path: "../../backend/dataset/with_kmeans_1maxwell_xlevel_1learneralgorithm1_during_training.csv",
               header: false,
             },
             {
               name: "y Learner 2 Output",
-              path: "../../backend/dataset/with_kmeans: 1maxwell_ylevel_1learneralgorithm1_during_training.csv",
+              path: "../../backend/dataset/with_kmeans_1maxwell_ylevel_1learneralgorithm1_during_training.csv",
               header: false,
             },
             
@@ -108,59 +108,59 @@ const dataType = [
         },
         {
           name: "Maxwell Without Kmeans",
-          path: "../../backend/dataset/with_kmeans: 0maxwell_x_before_split.csv",
+          path: "../../backend/dataset/with_kmeans_0maxwell_x_before_split.csv",
           header: true,
           buttons: [
             {
               name: "X Before Split",
-              path: "../../backend/dataset/with_kmeans: 0maxwell_x_before_split.csv",
+              path: "../../backend/dataset/with_kmeans_0maxwell_x_before_split.csv",
               header: false,
             },
             {
               name: "y Before Split",
-              path: "../../backend/dataset/with_kmeans: 0maxwell_y_before_split.csv",
+              path: "../../backend/dataset/with_kmeans_0maxwell_y_before_split.csv",
               header: false,
             },
             {
               name: "X KNN Learner 1 Input",
-              path: "../../backend/dataset/with_kmeans: 0maxwell_x1_after_split.csv",
+              path: "../../backend/dataset/with_kmeans_0maxwell_x1_after_split.csv",
               header: false,
             },
             {
               name: "y KNN Learner 1 Input",
-              path: "../../backend/dataset/with_kmeans: 0maxwell_y1_after_split.csv",
+              path: "../../backend/dataset/with_kmeans_0maxwell_y1_after_split.csv",
               header: false,
             },
             {
               name: "X Lasso Learner 1 Input",
-              path: "../../backend/dataset/with_kmeans: 0maxwell_x1_after_split.csv",
+              path: "../../backend/dataset/with_kmeans_0maxwell_x1_after_split.csv",
               header: false,
             },
             {
               name: "y Lasso Learner 1 Input",
-              path: "../../backend/dataset/with_kmeans: 0maxwell_y1_after_split.csv",
+              path: "../../backend/dataset/with_kmeans_0maxwell_y1_after_split.csv",
               header: false,
             },
 
 
             {
               name: "X Learner 1 Output",
-              path: "../../backend/dataset/with_kmeans: 0maxwell_xlevel_0learneralgorithm1_during_training.csv",
+              path: "../../backend/dataset/with_kmeans_0maxwell_xlevel_0learneralgorithm1_during_training.csv",
               header: false,
             },
             {
               name: "y Learner 1 Output",
-              path: "../../backend/dataset/with_kmeans: 0maxwell_ylevel_0learneralgorithm1_during_training.csv",
+              path: "../../backend/dataset/with_kmeans_0maxwell_ylevel_0learneralgorithm1_during_training.csv",
               header: false,
             },
             {
               name: "X Learner 2 Output",
-              path: "../../backend/dataset/with_kmeans: 0maxwell_xlevel_1learneralgorithm1_during_training.csv",
+              path: "../../backend/dataset/with_kmeans_0maxwell_xlevel_1learneralgorithm1_during_training.csv",
               header: false,
             },
             {
               name: "y Learner 2 Output",
-              path: "../../backend/dataset/with_kmeans: 0maxwell_ylevel_1learneralgorithm1_during_training.csv",
+              path: "../../backend/dataset/with_kmeans_0maxwell_ylevel_1learneralgorithm1_during_training.csv",
               header: false,
             },
             
@@ -209,59 +209,59 @@ const dataType = [
         },
         {
           name: "Desh With Kmeans",
-          path: "../../backend/dataset/with_kmeans: 1desh_x_before_split.csv",
+          path: "../../backend/dataset/with_kmeans_1desh_x_before_split.csv",
           header: true,
           buttons: [
             {
               name: "X Before Split",
-              path: "../../backend/dataset/with_kmeans: 1desh_x_before_split.csv",
+              path: "../../backend/dataset/with_kmeans_1desh_x_before_split.csv",
               header: false,
             },
             {
               name: "y Before Split",
-              path: "../../backend/dataset/with_kmeans: 1desh_y_before_split.csv",
+              path: "../../backend/dataset/with_kmeans_1desh_y_before_split.csv",
               header: false,
             },
             {
               name: "X KNN Learner 1 Input",
-              path: "../../backend/dataset/with_kmeans: 1desh_x1_after_split.csv",
+              path: "../../backend/dataset/with_kmeans_1desh_x1_after_split.csv",
               header: false,
             },
             {
               name: "y KNN Learner 1 Input",
-              path: "../../backend/dataset/with_kmeans: 1desh_y1_after_split.csv",
+              path: "../../backend/dataset/with_kmeans_1desh_y1_after_split.csv",
               header: false,
             },
             {
               name: "X Lasso Learner 1 Input",
-              path: "../../backend/dataset/with_kmeans: 1desh_x2_after_split.csv",
+              path: "../../backend/dataset/with_kmeans_1desh_x2_after_split.csv",
               header: false,
             },
             {
               name: "y Lasso Learner 1 Input",
-              path: "../../backend/dataset/with_kmeans: 1desh_y2_after_split.csv",
+              path: "../../backend/dataset/with_kmeans_1desh_y2_after_split.csv",
               header: false,
             },
 
 
             {
               name: "X Learner 1 Output",
-              path: "../../backend/dataset/with_kmeans: 1desh_xlevel_0learneralgorithm1_during_training.csv",
+              path: "../../backend/dataset/with_kmeans_1desh_xlevel_0learneralgorithm1_during_training.csv",
               header: false,
             },
             {
               name: "y Learner 1 Output",
-              path: "../../backend/dataset/with_kmeans: 1desh_ylevel_0learneralgorithm1_during_training.csv",
+              path: "../../backend/dataset/with_kmeans_1desh_ylevel_0learneralgorithm1_during_training.csv",
               header: false,
             },
             {
               name: "X Learner 2 Output",
-              path: "../../backend/dataset/with_kmeans: 1desh_xlevel_1learneralgorithm1_during_training.csv",
+              path: "../../backend/dataset/with_kmeans_1desh_xlevel_1learneralgorithm1_during_training.csv",
               header: false,
             },
             {
               name: "y Learner 2 Output",
-              path: "../../backend/dataset/with_kmeans: 1desh_ylevel_1learneralgorithm1_during_training.csv",
+              path: "../../backend/dataset/with_kmeans_1desh_ylevel_1learneralgorithm1_during_training.csv",
               header: false,
             },
             
@@ -269,59 +269,59 @@ const dataType = [
         },
         {
           name: "Desh Without Kmeans",
-          path: "../../backend/dataset/with_kmeans: 0desh_x_before_split.csv",
+          path: "../../backend/dataset/with_kmeans_0desh_x_before_split.csv",
           header: true,
           buttons: [
             {
               name: "X Before Split",
-              path: "../../backend/dataset/with_kmeans: 0desh_x_before_split.csv",
+              path: "../../backend/dataset/with_kmeans_0desh_x_before_split.csv",
               header: false,
             },
             {
               name: "y Before Split",
-              path: "../../backend/dataset/with_kmeans: 0desh_y_before_split.csv",
+              path: "../../backend/dataset/with_kmeans_0desh_y_before_split.csv",
               header: false,
             },
             {
               name: "X KNN Learner 1 Input",
-              path: "../../backend/dataset/with_kmeans: 0desh_x1_after_split.csv",
+              path: "../../backend/dataset/with_kmeans_0desh_x1_after_split.csv",
               header: false,
             },
             {
               name: "y KNN Learner 1 Input",
-              path: "../../backend/dataset/with_kmeans: 0desh_y1_after_split.csv",
+              path: "../../backend/dataset/with_kmeans_0desh_y1_after_split.csv",
               header: false,
             },
             {
               name: "X Lasso Learner 1 Input",
-              path: "../../backend/dataset/with_kmeans: 0desh_x1_after_split.csv",
+              path: "../../backend/dataset/with_kmeans_0desh_x1_after_split.csv",
               header: false,
             },
             {
               name: "y Lasso Learner 1 Input",
-              path: "../../backend/dataset/with_kmeans: 0desh_y1_after_split.csv",
+              path: "../../backend/dataset/with_kmeans_0desh_y1_after_split.csv",
               header: false,
             },
 
 
             {
               name: "X Learner 1 Output",
-              path: "../../backend/dataset/with_kmeans: 0desh_xlevel_0learneralgorithm1_during_training.csv",
+              path: "../../backend/dataset/with_kmeans_0desh_xlevel_0learneralgorithm1_during_training.csv",
               header: false,
             },
             {
               name: "y Learner 1 Output",
-              path: "../../backend/dataset/with_kmeans: 0desh_ylevel_0learneralgorithm1_during_training.csv",
+              path: "../../backend/dataset/with_kmeans_0desh_ylevel_0learneralgorithm1_during_training.csv",
               header: false,
             },
             {
               name: "X Learner 2 Output",
-              path: "../../backend/dataset/with_kmeans: 0desh_xlevel_1learneralgorithm1_during_training.csv",
+              path: "../../backend/dataset/with_kmeans_0desh_xlevel_1learneralgorithm1_during_training.csv",
               header: false,
             },
             {
               name: "y Learner 2 Output",
-              path: "../../backend/dataset/with_kmeans: 0desh_ylevel_1learneralgorithm1_during_training.csv",
+              path: "../../backend/dataset/with_kmeans_0desh_ylevel_1learneralgorithm1_during_training.csv",
               header: false,
             },
             
