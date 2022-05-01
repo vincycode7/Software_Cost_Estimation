@@ -80,7 +80,7 @@ def main(args):
         X_train_sca = scaler_X.transform(X_train)
 
     #load model
-    learners = StackEnsemble(levels=train_levels, level_model=level_model)
+    learners = StackEnsemble(levels=train_levels, level_model=level_model, dataset_name=dataset_type)
     learners.fit(X=X_train_sca, y=y_train, with_kmeans=with_kmeans,classification=False)
 
     print(f'shape shape  --> {X_train_sca.shape}')
