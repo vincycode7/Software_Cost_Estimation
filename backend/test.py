@@ -56,6 +56,7 @@ def main(args):
 
     print(f'range --> {range_}  {model_path}')
     learners = load(model_path)
+    learners.dataset_name = dataset_type+"test"
     preds = learners.predict(X_test_sca,prob_score=False)[0][0].reshape(-1)
     print(f'preds --> {preds} target --> {y_test} rang3 --> {range_}')
     rmse = mean_squared_error(y_test, preds)

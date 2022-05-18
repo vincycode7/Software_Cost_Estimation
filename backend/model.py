@@ -124,7 +124,19 @@ class StackEnsemble:
         X = [[X]]
         for each_level in range(len(self.models)):
             X = self.form_nxt_dset(self.models,each_level,X,train=False,classification=classification) if each_level <= len(self.models) else X
+            print(X)
             # print(f' check X sanity {X[0][0].shape}')
+            counter=1
+            # print(f"self.with_kmeans: {self.with_kmeans}, self.dataset_name: {self.dataset_name}, str(each_level): {str(each_level)}")
+            for each_split_dset in X:
+                dset_name_x = 'dataset/'+'with_kmeans_'+ str(self.with_kmeans) +  self.dataset_name+'_x'+'level_'+str(each_level)+'learner'+'algorithm'+str(counter)+'_during_testing.csv'
+                # dset_name_y = 'dataset/'+'with_kmeans_'+ str(self.with_kmeans) +  self.dataset_name+'_y'+'level_'+str(each_level)+'learner'+'algorithm'+str(counter)+'_during_testing.csv'
+                np.savetxt(dset_name_x, X[0][0], delimiter=',') 
+
+                # print(f"split: X: {self.dataset[0][0]} \n")
+                # print(f"y: {self.dataset[0][1]} \n")
+                # np.savetxt(dset_name_y, X[0][1], delimiter=',') 
+                counter+=1
         return [[np.argmax(X[0][0], axis=1)+1]] if prob_score else X
 
     @staticmethod
