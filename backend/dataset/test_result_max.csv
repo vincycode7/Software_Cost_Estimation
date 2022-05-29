@@ -1,0 +1,3 @@
+Dataset, Accuracy(%), F1 score(%), Precision(%), Recall(%), RMSE
+hold-out testset(Maxwell -- KMeans -- KNN -- Lasso), 1.0, 1.0, 1.0, 1.0, 41683019.4252
+hold-out testset(Maxwell -- KNN -- Lasso), 0.9231, 0.9211, 0.9316, 0.9231, 123932711.3298

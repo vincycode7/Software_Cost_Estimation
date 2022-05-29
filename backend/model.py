@@ -1,5 +1,5 @@
 from sklearn.cluster import KMeans
-from sklearn.metrics import accuracy_score, f1_score, recall_score, precision_score
+from sklearn.metrics import accuracy_score, f1_score, recall_score, precision_score, confusion_matrix
 import numpy as np
 
 class StackEnsemble:
@@ -178,9 +178,11 @@ class StackEnsemble:
             preds = self.label_target(targets=preds, ranges=encode_range)
         # print(f'real_labes   -----------\n target --> {target}   preds --> {preds}')
         acc = accuracy_score(target,preds)
+        cm = confusion_matrix(target,preds)
         f1_scr = f1_score(target,preds, average='weighted')
         pre = precision_score(target,preds, average='weighted')
         rec = recall_score(target,preds, average='weighted')
+        print(f"\n\n Confusion metric result: {cm} \n\n")
         return acc, f1_scr, rec, pre
 
     @staticmethod
