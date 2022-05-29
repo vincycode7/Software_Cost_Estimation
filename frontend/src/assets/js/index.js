@@ -236,6 +236,28 @@ const dataType = [
             
           ],
         },
+        {
+          name: "Final Result",
+          path: "../../backend/dataset/test_result_max.csv",
+          header: true,
+          buttons: [
+            {
+              name: "Test Result",
+              path: "../../backend/dataset/test_result_max.csv",
+              header: false,
+            },
+            {
+              name: "Confusion Metrics Kmeans",
+              path: "../../backend/dataset/confusion_m_test_max_kmean.csv",
+              header: false,
+            },
+            {
+              name: "Confusion Metrics Without Kmeans",
+              path: "../../backend/dataset/confusion_m_test_max_without_kmean.csv",
+              header: false,
+            }
+          ],
+        }
         
       ],
     },
@@ -469,6 +491,28 @@ const dataType = [
             
           ],
         },
+        {
+          name: "Final Result",
+          path: "../../backend/dataset/test_result_desh.csv",
+          header: true,
+          buttons: [
+            {
+              name: "Test Result",
+              path: "../../backend/dataset/test_result_desh.csv",
+              header: false,
+            },
+            {
+              name: "Confusion Metrics Test Kmeans",
+              path: "../../backend/dataset/confusion_m_test_desh_kmean.csv",
+              header: false,
+            },
+            {
+              name: "Confusion Metrics Test Without Kmeans",
+              path: "../../backend/dataset/confusion_m_test_desh_without_kmean.csv",
+              header: false,
+            }
+          ],
+        }
       ],
     },
   },
@@ -477,14 +521,25 @@ const dataType = [
     name: "Test Result",
     listInner: {
       list: [
+        
         {
           name: "Final Result",
-          path: "../../backend/dataset/test_result.csv",
+          path: "../../backend/dataset/test_result_desh.csv",
           header: true,
           buttons: [
             {
               name: "Test Result",
-              path: "../../backend/dataset/test_result.csv",
+              path: "../../backend/dataset/test_result_desh.csv",
+              header: false,
+            },
+            {
+              name: "Confusion Metrics Kmeans",
+              path: "../../backend/dataset/confusion_m_test_max_kmean.csv",
+              header: false,
+            },
+            {
+              name: "Confusion Metrics Without Kmeans",
+              path: "../../backend/dataset/confusion_m_test_max_without_kmean.csv",
               header: false,
             }
           ],
