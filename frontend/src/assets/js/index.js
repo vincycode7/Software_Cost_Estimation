@@ -515,38 +515,39 @@ const dataType = [
         }
       ],
     },
-  },
-  {
-    id: "id3",
-    name: "Test Result",
-    listInner: {
-      list: [
+  }
+  // ,
+  // {
+  //   id: "id3",
+  //   name: "Test Result",
+  //   listInner: {
+  //     list: [
         
-        {
-          name: "Final Result",
-          path: "../../backend/dataset/test_result_desh.csv",
-          header: true,
-          buttons: [
-            {
-              name: "Test Result",
-              path: "../../backend/dataset/test_result_desh.csv",
-              header: false,
-            },
-            {
-              name: "Confusion Metrics Kmeans",
-              path: "../../backend/dataset/confusion_m_test_max_kmean.csv",
-              header: false,
-            },
-            {
-              name: "Confusion Metrics Without Kmeans",
-              path: "../../backend/dataset/confusion_m_test_max_without_kmean.csv",
-              header: false,
-            }
-          ],
-        }
-      ],
-    },
-  },
+  //       {
+  //         name: "Final Result",
+  //         path: "../../backend/dataset/test_result_desh.csv",
+  //         header: true,
+  //         buttons: [
+  //           {
+  //             name: "Test Result",
+  //             path: "../../backend/dataset/test_result_desh.csv",
+  //             header: false,
+  //           },
+  //           {
+  //             name: "Confusion Metrics Kmeans",
+  //             path: "../../backend/dataset/confusion_m_test_max_kmean.csv",
+  //             header: false,
+  //           },
+  //           {
+  //             name: "Confusion Metrics Without Kmeans",
+  //             path: "../../backend/dataset/confusion_m_test_max_without_kmean.csv",
+  //             header: false,
+  //           }
+  //         ],
+  //       }
+  //     ],
+  //   },
+  // },
 ];
 
 class WorkData {
